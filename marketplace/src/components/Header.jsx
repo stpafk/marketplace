@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 export default function Header() {
 
@@ -15,8 +16,16 @@ export default function Header() {
               </div>
 
               <div className="header__shop">
-                <span className='add'>ADD</span>
-                <span className='kart'>KART</span>
+                <span className='add'>
+                    <Link to="">
+                        <i class="bi bi-plus-circle"></i>
+                    </Link>
+                </span>
+                <span className='kart'>
+                    <Link to="cart">
+                        <i class="bi bi-cart"></i>
+                    </Link>
+                </span>
               </div>
           </section>
     )
