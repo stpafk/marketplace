@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
+import ErrorPage from './components/ErrorPage';
 
 export default function Router() {
 
@@ -10,4 +11,6 @@ export default function Router() {
             errorElement: <ErrorPage />,
         }
     ])
+
+    return <RouterProvider router={router} />
 }
