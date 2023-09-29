@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "./Header";
 import { Link, useParams } from "react-router-dom";
+import Loader from "./Loader";
 
 export default function Album() {
     
@@ -10,7 +11,7 @@ export default function Album() {
         <>
             <Header />
             {
-                
+                <Loader type={search.type}/>
             }
             <Link to="/">Back</Link>
         </>
