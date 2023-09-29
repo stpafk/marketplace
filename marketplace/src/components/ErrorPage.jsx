@@ -3,7 +3,7 @@ export default function ErrorPage() {
 
     return(
         <p>
-            Error in displatying page
+            Error in displaying page.
         </p>
     )
 
