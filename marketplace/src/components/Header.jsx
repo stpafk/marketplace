@@ -18,12 +18,12 @@ export default function Header() {
               <div className="header__shop">
                 <span className='add'>
                     <Link to="">
-                        <i class="bi bi-plus-circle"></i>
+                        <i className="bi bi-plus-circle"></i>
                     </Link>
                 </span>
                 <span className='kart'>
                     <Link to="cart">
-                        <i class="bi bi-cart"></i>
+                        <i className="bi bi-cart"></i>
                     </Link>
                 </span>
               </div>
