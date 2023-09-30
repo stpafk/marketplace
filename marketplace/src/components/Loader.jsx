@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import setRequest from "../utils/setRequest";
 
-export default function Loader(props) {
+function Fetch(props) {
 
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -19,6 +19,13 @@ export default function Loader(props) {
         .catch((error) => setError(error))
         .finally(() => setLoading(false))
     }, [])
+
+    return {data, error, loading}
+}
+
+export default function Loader(props) {
+
+    const { data, error, loading } = Fetch(props)
 
     if (error) return <p>network error while fetching resource</p>
     if (loading) return <p>Fetching...</p>
