@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import Header from "../Header";
 
-
-export default function Search() {
-
+function Fetch() {
+    
     const search = useLocation();
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -23,12 +23,18 @@ export default function Search() {
         .finally(() => setLoading(false))
     }, [])
 
-    if (loading) return <p>a2ee2</p>
-    if (error) return <p>Error</p>
+    return {data, loading, error}
+}
+
+export default function Search() {
+
+    const {data, error, loading } = Fetch();
 
     return (
         <>
+            <Header />
             {console.log(data)}
+            <Link to="/">Back</Link>
         </>
     )
 }
