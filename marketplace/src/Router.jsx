@@ -14,7 +14,7 @@ export default function Router() {
         {
             path: "album/:type",
             element: <Album />,
-        }
+        }        
     ])
 
     return <RouterProvider router={router} />
