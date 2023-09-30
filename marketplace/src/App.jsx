@@ -19,6 +19,7 @@ export default function App() {
               <div className='main__search'>
                 <h1>Navigation</h1>
                 <Link to="album/top">Top</Link>
+                <Link to=""></Link>
               </div>
           </section>
       </>
