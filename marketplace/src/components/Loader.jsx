@@ -25,9 +25,15 @@ export default function Loader(props) {
 
     return(
         <>
+            <h1>TOP {props.type.toUpperCase()} METAL ALBUMS</h1>
             <ul>
+                {console.log(data)}
                 {data.albums.album.map((album, index) => {
-                    return <li key={index}>{album.name}</li>
+                    return <li key={index}>
+                        <h3>{album.name}</h3>
+                        <p>{album.artist.name}</p>
+                        <img src={album.image[3]['#text']} alt="album cover" />
+                    </li>
                 })}
             </ul>
         </>
