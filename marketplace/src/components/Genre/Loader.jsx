@@ -33,13 +33,12 @@ export default function Loader(props) {
     return(
         <>
             <h1>TOP {props.type.toUpperCase()} METAL ALBUMS</h1>
-            <ul>
-                {console.log(data)}
+            <ul className="load__genre">
                 {data.albums.album.map((album, index) => {
-                    return <li key={index}>
+                    return <li key={index} className="load__album">
                         <h3>{album.name}</h3>
                         <p>{album.artist.name}</p>
-                        <img src={album.image[3]['#text']} alt="album cover" />
+                        <img src={album.image[3]['#text']} alt={album.name + "cover"} />
                     </li>
                 })}
             </ul>

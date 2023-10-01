@@ -8,9 +8,8 @@ export default function Header() {
 
     function handleSearch(event) {
         event.preventDefault();
-        console.log(value)
         if (value) {
-            navigate("/search", {type: value, replace: true })
+            navigate("/search", {state: value, replace: true })
         };
     };
     
