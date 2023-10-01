@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import setRequest from "../../utils/setRequest";
+import cleanUpData from "../../utils/cleanUpData";
 
 function Fetch(props) {
 
@@ -15,7 +16,7 @@ function Fetch(props) {
             }
             return request.json()
         })
-        .then((meta) => setData(meta))
+        .then((meta) => setData(cleanUpData(meta.albums.album)))
         .catch((error) => setError(error))
         .finally(() => setLoading(false))
     }, [])
@@ -34,7 +35,7 @@ export default function Loader(props) {
         <>
             <h1>TOP {props.type.toUpperCase()} METAL ALBUMS</h1>
             <ul className="load__genre">
-                {data.albums.album.map((album, index) => {
+                {data.map((album, index) => {
                     return <li key={index} className="load__album">
                         <h3>{album.name}</h3>
                         <p>{album.artist.name}</p>

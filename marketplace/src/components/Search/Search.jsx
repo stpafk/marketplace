@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Header from "../Header";
+import cleanUpData from "../../utils/cleanUpData";
 
 function Fetch() {
     
@@ -18,8 +19,9 @@ function Fetch() {
 
             return response.json();
         })
-        .then((meta) => setData(meta))
+        .then((meta) => setData(cleanUpData(meta.results.albummatches.album)))
         .catch((error) => setError(error))
+        .then(() => console.log(data))
         .finally(() => setLoading(false))
     }, [state])
 
@@ -37,8 +39,7 @@ export default function Search() {
         <>
             <Header />
             <ul className="load__search">
-                {data.results.albummatches.album.map((album, index) => {
-
+                {data.map((album, index) => {
                     return <li key={index} className="load__album">
                         <h3>{album.name}</h3>
                         <p>{album.artist}</p>
