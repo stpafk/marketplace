@@ -39,7 +39,6 @@ export default function Search() {
 
     return (
         <>
-            <Header />
             <ul className="load__search">
                 <h1>Showing results for "{state}"</h1>
                 { data.length === 0 ? <p>Album not found.</p>

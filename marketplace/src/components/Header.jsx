@@ -26,15 +26,15 @@ export default function Header() {
                 <input type="text" placeholder="Search" onChange={(e) => setValue(e.target.value)}/>
                 <button type="submit">submit</button>
               </form>
-
               <div className="header__shop">
+                {/*
                 <span className='add'>
                     <Link to="">
                         <i className="bi bi-plus-circle"></i>
                     </Link>
-                </span>
-                <span className='kart'>
-                    <Link to="cart">
+                </span>*/}
+                <span className='cart'>
+                    <Link to="/cart">
                         <i className="bi bi-cart"></i>
                     </Link>
                 </span>
