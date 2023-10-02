@@ -12,7 +12,7 @@ function Fetch() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch(`http://ws.audioscrobbler.com/2.0/?method=album.search&album=${state}&api_key=3f26f648032bcdf951aa7395619343a3&format=json&limit=25`)
+        fetch(`https://ws.audioscrobbler.com/2.0/?method=album.search&album=${state}&api_key=3f26f648032bcdf951aa7395619343a3&format=json&limit=25`)
         .then((response) => {
             if (response.status >= 400) {
                 throw new Error("error");
