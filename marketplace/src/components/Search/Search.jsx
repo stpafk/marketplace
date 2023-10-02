@@ -22,7 +22,7 @@ function Fetch() {
         })
         .then((meta) => setData(cleanUpData(meta.results.albummatches.album)))
         .catch((error) => setError(error))
-        .then(() => console.log(data))
+        .then(() => console.log('this run once'))
         .finally(() => setLoading(false))
     }, [state])
 
@@ -45,6 +45,7 @@ export default function Search(props) {
                 { data.length === 0 ? <p>Album not found.</p>
                 :
                 data.map((album, index) => {
+                    
                     let obj = {
                         name: album.name,
                         artist: album.artist,
@@ -58,7 +59,7 @@ export default function Search(props) {
                         <p>{album.artist}</p>
                         <span className="price">
                             <p>U${calcPrice(album)}</p>
-                            <button onClick={cartAdd(obj)}>Add to Cart</button>
+                            <button onClick={() => cartAdd(obj)}>Add to Cart</button>
                         </span>
                     </li>
                 })}
