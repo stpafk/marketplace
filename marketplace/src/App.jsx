@@ -20,8 +20,8 @@ export default function App() {
 
     return(
       <>
-          <Header obj={onCart} d={deleteItem}/>
-          <Outlet context={addToCart}/>
+          <Header />
+          <Outlet context={[addToCart, onCart]}/>
       </>
     )
 }

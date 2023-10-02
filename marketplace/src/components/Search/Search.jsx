@@ -29,10 +29,10 @@ function Fetch() {
     return {data, loading, error, state}
 }
 
-export default function Search(props) {
+export default function Search() {
 
     const {data, error, loading, state } = Fetch();
-    const cartAdd = useOutletContext();
+    const [cartAdd, object] = useOutletContext();
 
     if (state === null) return <><Header /><p className="search__error">Search for an album.</p></>
     if (loading) return <p className="search__error">Loading</p>
@@ -45,7 +45,7 @@ export default function Search(props) {
                 { data.length === 0 ? <p>Album not found.</p>
                 :
                 data.map((album, index) => {
-                    
+
                     let obj = {
                         name: album.name,
                         artist: album.artist,
