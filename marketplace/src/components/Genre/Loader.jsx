@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import setRequest from "../../utils/setRequest";
 import cleanUpData from "../../utils/cleanUpData";
+import calcPrice from "../../utils/calcPrice";
 
 function Fetch(props) {
 
@@ -38,9 +39,10 @@ export default function Loader(props) {
                 {data.length === 0 ? <p>Album not found. </p> : 
                 data.map((album, index) => {
                     return <li key={index} className="load__album">
+                        <img src={album.image[3]['#text']} alt={album.name + "cover"} />
                         <h3>{album.name}</h3>
                         <p>{album.artist.name}</p>
-                        <img src={album.image[3]['#text']} alt={album.name + "cover"} />
+                        <span className="price"><p>{calcPrice(album)}$</p></span>
                     </li>
                 })}
             </ul>

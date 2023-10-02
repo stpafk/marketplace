@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Header from "../Header";
 import cleanUpData from "../../utils/cleanUpData";
+import calcPrice from "../../utils/calcPrice";
 
 function Fetch() {
     
@@ -25,12 +26,12 @@ function Fetch() {
         .finally(() => setLoading(false))
     }, [state])
 
-    return {data, loading, error}
+    return {data, loading, error, state}
 }
 
 export default function Search() {
 
-    const {data, error, loading } = Fetch();
+    const {data, error, loading, state } = Fetch();
 
     if (loading) return <p>Loading</p>
     if (error) return <p>Error</p>
@@ -39,13 +40,15 @@ export default function Search() {
         <>
             <Header />
             <ul className="load__search">
+                <h1>Showing results for "{state}"</h1>
                 { data.length === 0 ? <p>Album not found.</p>
                 :
                 data.map((album, index) => {
                     return <li key={index} className="load__album">
+                        <img src={album.image[3]['#text']} alt={album.name + "cover"} />
                         <h3>{album.name}</h3>
                         <p>{album.artist}</p>
-                        <img src={album.image[3]['#text']} alt={album.name + "cover"} />
+                        <span className="price"><p>U${calcPrice(album)}</p></span>
                     </li>
                 })}
             </ul>
