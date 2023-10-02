@@ -42,11 +42,13 @@ export default function Loader(props) {
                         <img src={album.image[3]['#text']} alt={album.name + "cover"} />
                         <h3>{album.name}</h3>
                         <p>{album.artist.name}</p>
-                        <span className="price"><p>{calcPrice(album)}$</p></span>
+                        <span className="price">
+                            <p>{calcPrice(album)}$</p>
+                            <button>Add to Cart</button>
+                        </span>
                     </li>
                 })}
             </ul>
         </>
     )
-
 }

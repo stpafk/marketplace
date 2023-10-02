@@ -33,8 +33,9 @@ export default function Search() {
 
     const {data, error, loading, state } = Fetch();
 
-    if (loading) return <p>Loading</p>
-    if (error) return <p>Error</p>
+    if (state === null) return <><Header /><p className="search__error">Search for an album.</p></>
+    if (loading) return <p className="search__error">Loading</p>
+    if (error) return <p className="search__error">Error</p>
 
     return (
         <>
@@ -48,7 +49,10 @@ export default function Search() {
                         <img src={album.image[3]['#text']} alt={album.name + "cover"} />
                         <h3>{album.name}</h3>
                         <p>{album.artist}</p>
-                        <span className="price"><p>U${calcPrice(album)}</p></span>
+                        <span className="price">
+                            <p>U${calcPrice(album)}</p>
+                            <button>Add to Cart</button>
+                        </span>
                     </li>
                 })}
             </ul>
