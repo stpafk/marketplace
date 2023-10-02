@@ -9,10 +9,10 @@ export default function Album() {
     return(
         <>
             <Header />
+            <Link to="/">Back</Link>
             {
                 <Loader type={search.type}/>
             }
-            <Link to="/">Back</Link>
         </>
     )
 

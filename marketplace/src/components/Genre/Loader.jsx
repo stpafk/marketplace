@@ -33,9 +33,10 @@ export default function Loader(props) {
 
     return(
         <>
-            <h1>TOP {props.type.toUpperCase()} METAL ALBUMS</h1>
+            <h1>TOP {props.type.toUpperCase()} ALBUMS</h1>
             <ul className="load__genre">
-                {data.map((album, index) => {
+                {data.length === 0 ? <p>Album not found. </p> : 
+                data.map((album, index) => {
                     return <li key={index} className="load__album">
                         <h3>{album.name}</h3>
                         <p>{album.artist.name}</p>

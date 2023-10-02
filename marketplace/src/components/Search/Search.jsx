@@ -39,7 +39,9 @@ export default function Search() {
         <>
             <Header />
             <ul className="load__search">
-                {data.map((album, index) => {
+                { data.length === 0 ? <p>Album not found.</p>
+                :
+                data.map((album, index) => {
                     return <li key={index} className="load__album">
                         <h3>{album.name}</h3>
                         <p>{album.artist}</p>
