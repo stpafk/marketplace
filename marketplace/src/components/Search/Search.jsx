@@ -59,6 +59,9 @@ export default function Search() {
                         <p>{album.artist}</p>
                         <span className="price">
                             <p>{priceHandlers.getPrice(album)}$</p>
+                            <label htmlFor="quantity">Quantity</label>
+                            <input type="number" name="quantity" id="qtt"
+                            min={1} onChange={() => obj.quantity++} />
                             <button onClick={() => cartAdd(obj)}>Add to Cart</button>
                         </span>
                     </li>
