@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import setRequest from "../../utils/setRequest";
 import cleanUpData from "../../utils/cleanUpData";
-import calcPrice from "../../utils/calcPrice";
+import { priceHandlers } from "../../utils/priceHandler";
 
 function Fetch(props) {
 
@@ -28,6 +28,7 @@ function Fetch(props) {
 export default function Loader(props) {
 
     const { data, error, loading } = Fetch(props)
+    const cartAdd = props.cartAdd;
 
     if (error) return <p>network error while fetching resource</p>
     if (loading) return <p>Fetching...</p>
@@ -38,13 +39,22 @@ export default function Loader(props) {
             <ul className="load__genre">
                 {data.length === 0 ? <p>Album not found. </p> : 
                 data.map((album, index) => {
+
+                    let obj = {
+                        name: album.name,
+                        artist: album.artist.name,
+                        price: priceHandlers.getPrice(album),
+                        img: album.image[3]['#text'],
+                        quantity: 1,
+                    }
+
                     return <li key={index} className="load__album">
                         <img src={album.image[3]['#text']} alt={album.name + "cover"} />
                         <h3>{album.name}</h3>
                         <p>{album.artist.name}</p>
                         <span className="price">
-                            <p>{calcPrice(album)}$</p>
-                            <button>Add to Cart</button>
+                            <p>{priceHandlers.getPrice(album)}$</p>
+                            <button onClick={() => cartAdd(obj)}>Add to Cart</button>
                         </span>
                     </li>
                 })}

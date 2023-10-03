@@ -1,17 +1,16 @@
-import Header from "../Header";
-import { Link, useParams } from "react-router-dom";
+import { Link, useOutletContext, useParams } from "react-router-dom";
 import Loader from "./Loader";
 
 export default function Album() {
     
     const search = useParams();
+    const [cartAdd] = useOutletContext();
 
     return(
         <>
-        <Header />
             <Link to="/">Back</Link>
             {
-                <Loader type={search.type}/>
+                <Loader type={search.type} cartAdd={cartAdd}/>
             }
         </>
     )
