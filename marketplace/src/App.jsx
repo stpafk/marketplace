@@ -1,7 +1,7 @@
-import { Outlet, useParams } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import './App.css'
 import Header from './components/Header'
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export default function App() {
 
@@ -9,7 +9,7 @@ export default function App() {
 
     function addToCart(object) {
       setCart(oldObj => [...oldObj, object]);
-      console.log(onCart)
+      console.log(onCart);
       return;
     }
 
@@ -21,7 +21,7 @@ export default function App() {
     return(
       <>
           <Header />
-          <Outlet context={[addToCart, onCart]}/>
+          <Outlet context={[addToCart, onCart, deleteItem]}/>
       </>
     )
 }

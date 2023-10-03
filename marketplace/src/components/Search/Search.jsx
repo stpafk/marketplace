@@ -54,7 +54,7 @@ export default function Search() {
                         quantity: 1,
                     }
                     return <li key={index} className="load__album">
-                        <img src={album.image[3]['#text']} alt={album.name + "cover"} />
+                        <img src={album.image[3]['#text']} alt={album.name + " cover"} />
                         <h3>{album.name}</h3>
                         <p>{album.artist}</p>
                         <span className="price">
