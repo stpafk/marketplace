@@ -14,8 +14,10 @@ export default function App() {
     }
 
     function deleteItem(name) {
-      let newItens = onCart.filter((item) => item !== name)
+
+      let newItens = onCart.filter((item) => item.name !== name) 
       setCart(newItens);
+
     }
 
     return(

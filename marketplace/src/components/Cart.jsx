@@ -20,7 +20,7 @@ export default function Cart() {
                         <span className="price">
                             <p>Quantity: {item.quantity}</p>
                             <p>U${item.price * item.quantity}</p>
-                            <button onClick={() => deleteItem(item.name)}>Remove</button>
+                            <button onClick={() => deleteItem(item.name)}>Remove Album</button>
                         </span>
                     </li>
                 })}
