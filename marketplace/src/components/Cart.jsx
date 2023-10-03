@@ -12,12 +12,12 @@ export default function Cart() {
         <ul>
             {cartItems.map((item, key) => {
                 return <li key={key}>
-                    <img src={item.img} alt={item.name + " cover"} />
+                    <img src={item.img} alt={item.name + "   cover"} />
                         <h3>{item.name}</h3>
                         <p>{item.artist}</p>
                         <span className="price">
                             <p>U${item.price}</p>
-                            <button>Remove</button>
+                            <button onClick={() => deleteItem(item.name)}>Remove</button>
                         </span>
                     </li>
             })}
