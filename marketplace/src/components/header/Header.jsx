@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import './Header.css'
+import hand from '../../assets/hand.svg'
 
 export default function Header() {
 
@@ -16,16 +17,18 @@ export default function Header() {
     
     return(
         <section className="header">
-              <img src="" alt="A" />
-              <div className="header__right">
+              <img src={hand} alt="rock symbol" />
+              <div className="header__left">
                   <h1>The Dark Store</h1>
                   <p>Your metal albums marketplace.</p>
               </div>
 
               <form className="header__search" onSubmit={handleSearch}>
                 <label htmlFor="search">Search Album/Artist</label>
-                <input type="text" placeholder="Search" onChange={(e) => setValue(e.target.value)}/>
-                <button type="submit">submit</button>
+                <span>
+                    <input type="text" placeholder="" onChange={(e) => setValue(e.target.value)}/>
+                    <button type="submit"><i class="bi bi-search"></i></button>
+                </span>
               </form>
               <div className="header__shop">
                 {/*
