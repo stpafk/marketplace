@@ -16,14 +16,10 @@ export default function Router() {
             children: [
                 {index: true, element: <Home />},
                 {path: "cart", element: <Cart />},
-                {path: "search", element: <Search />}
+                {path: "search", element: <Search />},
+                {path: "album/:type", element: <Album />},
             ]
         },    
-        {
-            path: "/album/:type",
-            element: <Album />,
-        },
-        
     ])
 
     return <RouterProvider router={router} />
