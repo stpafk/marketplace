@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useLocation, useOutletContext } from "react-router-dom";
 import Header from "../Header";
 import cleanUpData from "../../utils/cleanUpData";
-import calcPrice from "../../utils/calcPrice";
+import { priceHandlers } from "../../utils/priceHandler";
 
 function Fetch() {
     
@@ -22,7 +22,6 @@ function Fetch() {
         })
         .then((meta) => setData(cleanUpData(meta.results.albummatches.album)))
         .catch((error) => setError(error))
-        .then(() => console.log('this run once'))
         .finally(() => setLoading(false))
     }, [state])
 
@@ -49,7 +48,7 @@ export default function Search() {
                     let obj = {
                         name: album.name,
                         artist: album.artist,
-                        price: calcPrice(album),
+                        price: priceHandlers.getPrice(album),
                         img: album.image[3]['#text'],
                         quantity: 1,
                     }
@@ -58,7 +57,7 @@ export default function Search() {
                         <h3>{album.name}</h3>
                         <p>{album.artist}</p>
                         <span className="price">
-                            <p>U${calcPrice(album)}</p>
+                            <p>{priceHandlers.getPrice(album)}$</p>
                             <button onClick={() => cartAdd(obj)}>Add to Cart</button>
                         </span>
                     </li>

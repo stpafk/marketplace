@@ -9,12 +9,12 @@ export default function App() {
 
     function addToCart(object) {
       setCart(oldObj => [...oldObj, object]);
-      console.log(onCart);
+      console.log(onCart)
       return;
     }
 
     function deleteItem(name) {
-      let newItens = onCart.filter((item) => item.name !== name)
+      let newItens = onCart.filter((item) => item !== name)
       setCart(newItens);
     }
 
