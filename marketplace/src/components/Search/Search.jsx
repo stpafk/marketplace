@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation, useOutletContext } from "react-router-dom";
-import Header from "../Header";
+import Header from "../header/Header";
 import cleanUpData from "../../utils/cleanUpData";
 import { priceHandlers } from "../../utils/priceHandler";
 

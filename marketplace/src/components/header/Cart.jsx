@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useOutletContext } from "react-router-dom";
-import { priceHandlers } from "../utils/priceHandler";
+import { priceHandlers } from "../../utils/priceHandler";
 
 
 export default function Cart() {
