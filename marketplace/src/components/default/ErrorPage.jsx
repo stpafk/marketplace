@@ -1,4 +1,4 @@
-import Header from "./Header";
+import Header from "../header/Header"
 import { Link } from "react-router-dom";
 
 export default function ErrorPage() {
@@ -6,7 +6,7 @@ export default function ErrorPage() {
     return(
         <>
             <Header />
-            <p> Error in displaying page.</p>
+            <p className="Error msg"> Error in displaying page.</p>
             <Link to="/">Back</Link>
         </>
     )

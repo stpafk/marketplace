@@ -12,8 +12,8 @@ export default function Header() {
         event.preventDefault();
         if (value) {
             navigate("/search", {state: value, replace: true })
-        };
-    };
+        }
+    }
     
     return(
         <section className="header">
@@ -27,7 +27,7 @@ export default function Header() {
                 <label htmlFor="search">Search Album/Artist</label>
                 <span>
                     <input type="text" placeholder="" onChange={(e) => setValue(e.target.value)}/>
-                    <button type="submit"><i class="bi bi-search"></i></button>
+                    <button type="submit"><i className="bi bi-search"></i></button>
                 </span>
               </form>
               <div className="header__shop">

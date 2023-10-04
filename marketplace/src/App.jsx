@@ -9,7 +9,6 @@ export default function App() {
 
     function addToCart(object) {
       setCart(oldObj => [...oldObj, object]);
-      console.log(onCart)
       return;
     }
 
