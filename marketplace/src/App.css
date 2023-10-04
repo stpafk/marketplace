@@ -13,3 +13,9 @@
   color: #fff;
   font-family: 'Metal Mania', cursive;
 }
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 3fr;
+}

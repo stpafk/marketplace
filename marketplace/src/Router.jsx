@@ -5,6 +5,7 @@ import Album from './components/Genre/Album';
 import Search from './components/Search/Search';
 import Cart from './components/header/Cart';
 import Home from './components/default/Home';
+import Contact from './components/outer/Contact';
 
 export default function Router() {
 
