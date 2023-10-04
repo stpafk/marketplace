@@ -9,13 +9,46 @@
 :root {
   background: url(assets/background.jpg);
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-color: black;
   color: #fff;
   font-family: 'Metal Mania', cursive;
+}
+
+.grid {
+  padding: 2% 5%;
+}
+
+.grid h1 {
+  margin: 2% 0;
 }
 
 ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 3fr;
+}
+
+ul li {
+  background-color: #3e3b3b72;
+  border-radius: 2rem;
+  padding: 5%;
+  margin: 2% 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.load__album img {
+  box-shadow: 5px 5px 20px rgb(2, 2, 116);
+  border: 2px solid rgb(0, 0, 106);
+  border-radius: 1rem;
+}
+
+.album__info {
+  padding: 4% 0;
+  font-size: 22px;
+}
+
+.album__info > h3 {
+    font-style: italic;
 }
