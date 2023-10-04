@@ -8,6 +8,12 @@ export default function App() {
     const [onCart, setCart] = useState([])
 
     function addToCart(object) {
+
+      if (onCart.find(obj => obj.name === object.name)){
+        onCart.find(obj => obj.name === object.name).quantity++;
+        return;
+      }
+
       setCart(oldObj => [...oldObj, object]);
       return;
     }
