@@ -21,7 +21,7 @@ export default function App() {
 
     return(
       <>
-          <Header />
+          <Header cartItems={onCart}/>
           <Outlet context={[addToCart, onCart, deleteItem]}/>
       </>
     )

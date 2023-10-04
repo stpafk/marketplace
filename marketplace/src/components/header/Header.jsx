@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useOutletContext } from "react-router-dom";
 import './Header.css'
 import hand from '../../assets/hand.svg'
 
-export default function Header() {
+export default function Header({cartItems}) {
 
     const [value, setValue] = useState("");
     const navigate = useNavigate()
@@ -17,7 +17,7 @@ export default function Header() {
     
     return(
         <section className="header">
-              <img src={hand} alt="rock symbol" />
+              <Link to="/"><img src={hand} alt="rock symbol" /></Link>
               <div className="header__left">
                   <h1>The Dark Store</h1>
                   <p>Your metal albums marketplace.</p>
@@ -39,6 +39,7 @@ export default function Header() {
                 </span>*/}
                 <span className='cart'>
                     <Link to="/cart">
+                        {cartItems.length === 0 ? <></> : <p className="cart__qtt">{cartItems.length}</p>}
                         <i className="bi bi-cart"></i>
                     </Link>
                 </span>
