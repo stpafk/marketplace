@@ -38,9 +38,9 @@ export default function Search() {
     if (error) return <p className="search__error">Error</p>
 
     return (
-        <>
+        <section className="grid">
+            <h1>Showing results for "{state}"</h1>
             <ul className="load__search">
-                <h1>Showing results for "{state}"</h1>
                 { data.length === 0 ? <p>Album not found.</p>
                 :
                 data.map((album, index) => {
@@ -55,19 +55,21 @@ export default function Search() {
                     
                     return <li key={index} className="load__album">
                         <img src={album.image[3]['#text']} alt={album.name + " cover"} />
-                        <h3>{album.name}</h3>
-                        <p>{album.artist}</p>
-                        <span className="price">
-                            <p>{priceHandlers.getPrice(album)}$</p>
-                            <label htmlFor="quantity">Quantity</label>
-                            <input type="number" name="quantity" id="qtt"
-                            min={1} onChange={() => obj.quantity++} />
-                            <button onClick={() => cartAdd(obj)}>Add to Cart</button>
-                        </span>
+                        <div className="album__info">
+                            <h3>{album.name}</h3>
+                            <p>{album.artist}</p>
+                            <span className="price">
+                                <p>{priceHandlers.getPrice(album)}$</p>
+                                <label htmlFor="quantity">Quantity</label>
+                                <input type="number" name="quantity" id="qtt"
+                                min={1} onChange={() => obj.quantity++} />
+                                <button onClick={() => cartAdd(obj)}>Add to Cart</button>
+                            </span>
+                        </div>
                     </li>
                 })}
             </ul>
             <Link to="/">Back</Link>
-        </>
+        </section>
     )
 }

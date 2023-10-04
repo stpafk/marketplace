@@ -50,12 +50,14 @@ export default function Loader(props) {
 
                     return <li key={index} className="load__album">
                         <img src={album.image[3]['#text']} alt={album.name + "cover"} />
-                        <h3>{album.name}</h3>
-                        <p>{album.artist.name}</p>
-                        <span className="price">
-                            <p>{priceHandlers.getPrice(album)}$</p>
-                            <button onClick={() => cartAdd(obj)}>Add to Cart</button>
-                        </span>
+                        <div className="album__info">
+                            <h3>{album.name}</h3>
+                            <p>{album.artist.name}</p>
+                            <span className="price">
+                                <p>{priceHandlers.getPrice(album)}$</p>
+                                <button onClick={() => cartAdd(obj)}>Add to Cart</button>
+                            </span>
+                        </div>
                     </li>
                 })}
             </ul>

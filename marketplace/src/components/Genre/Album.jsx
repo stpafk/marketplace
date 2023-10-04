@@ -7,12 +7,12 @@ export default function Album() {
     const [cartAdd] = useOutletContext();
 
     return(
-        <>
+        <section className="grid">
             <Link to="/">Back</Link>
             {
                 <Loader type={search.type} cartAdd={cartAdd}/>
             }
-        </>
+        </section>
     )
 
 }
