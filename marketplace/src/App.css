@@ -15,6 +15,29 @@
   font-family: 'Metal Mania', cursive;
 }
 
+section.main {
+  display: flex;
+  padding: 5%;
+}
+
+.main__info {
+  background-color: #3e3b3b72;
+  opacity: 90%;
+  padding: 2%;
+  max-width: 50%;
+  border-radius: 3rem;
+}
+
+.main__info h1 {
+  padding-bottom: 2.5%;
+  font-size: 32px;
+  text-shadow: 10px 0 20px rgb(0, 0, 106);
+}
+
+.main__info p {
+  font-size: 18px;
+}
+
 .grid {
   padding: 2% 5%;
 }
