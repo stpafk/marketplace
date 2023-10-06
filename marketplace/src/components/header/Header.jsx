@@ -39,7 +39,8 @@ export default function Header({cartItems}) {
                 </span>*/}
                 <span className='cart'>
                     <Link to="/cart">
-                        {cartItems.length === 0 ? <></> : <p className="cart__qtt">{cartItems.length}</p>}
+                        {cartItems === undefined ? (<></>) :
+                        cartItems.length === 0 ? <></> : <p className="cart__qtt">{cartItems.length}</p>}
                         <i className="bi bi-cart"></i>
                     </Link>
                 </span>

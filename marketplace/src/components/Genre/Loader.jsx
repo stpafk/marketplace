@@ -31,7 +31,7 @@ export default function Loader(props) {
     const cartAdd = props.cartAdd;
 
     if (error) return <div className="error"><p>Error in fetching resource.</p></div>
-    if (loading) return <p>Fetching...</p>
+    if (loading) return <div className="loading"><span className="loader"></span></div>
 
     return(
         <>

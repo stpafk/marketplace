@@ -34,8 +34,8 @@ export default function Search() {
     const [cartAdd, object] = useOutletContext();
 
     if (state === null) return <><div className="error"><p className="search__error">Search for an album.</p></div></>
-    if (loading) return <div className="loading"></div>
-    if (error) return <p className="search__error">Error</p>
+    if (loading) return <div className="loading"><span className="loader"></span></div>
+    if (error) return <div className="error"><p className="search__error">Error</p><Link to="/">Back</Link></div>
 
     return (
         <section className="grid">

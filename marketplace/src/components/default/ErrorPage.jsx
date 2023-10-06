@@ -7,7 +7,7 @@ export default function ErrorPage() {
         <>
             <Header />
             <div className="error">
-                <p className="Error msg"> Error in displaying page.</p>
+                <p className="Error msg">404 Page not Found.</p>
                 <Link to="/">Back</Link>
             </div>
         </>
