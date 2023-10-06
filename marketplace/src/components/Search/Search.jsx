@@ -46,14 +46,17 @@ export default function Search() {
                     return <li key={index} className="load__album">
                         <img src={album.image[3]['#text']} alt={album.name + " cover"} />
                         <div className="album__info">
-                            <h3>{album.name}</h3>
-                            <p>{album.artist}</p>
-                            <p>{priceHandlers.getPrice(album) * album.quantity}$</p>
-                            <span className="price">
+                            <div className="info">
+                                <h3>{album.name}</h3>
+                                <p>{album.artist}</p>
+                                <p>{priceHandlers.getPrice(album) * album.quantity}$</p>
+                            </div>
+                            <div className="price">
                                 <label htmlFor="qtt">Quantity:</label>
                                 <input type="number" name="nmb" onChange={(e) => album.quantity = e.target.value} min={1} max={10} />
                                 <button onClick={() => cartAdd(album)}>Add to Cart</button>
-                            </span>
+                            </div>
+                            {console.log(album)}
                         </div>
                     </li>
                 })}
