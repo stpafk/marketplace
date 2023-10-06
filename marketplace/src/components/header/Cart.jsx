@@ -12,11 +12,13 @@ export default function Cart() {
         <section className="cart">
             <ul className="cart__items">
             {cartItems.map((item, key) => {
-                    return <li key={key}>
-                        <img src={item.image[3]['#text']} alt={item.name + "   cover"} />
-                        <h3>{item.name}</h3>
-                        <p>{item.artist.name}</p>
-                        <span className="price">
+                    return <li className="cart_li" key={key}>
+                        <img src={item.image[1]['#text']} alt={item.name + "   cover"} />
+                        <div className="wrapper">
+                            <h3>{item.name}</h3>
+                            <h4>{item.artist.name}</h4>
+                        </div>
+                        <span className="price__cart">
                             <p>Quantity: {item.quantity}</p>
                             <p>U${item.price * item.quantity}</p>
                             <button onClick={() => deleteItem(item.name)}>Remove Album</button>
@@ -26,8 +28,8 @@ export default function Cart() {
             </ul>
             <div className="cart__display">
                 <h1>Your Cart</h1>
-                <h1>Albums: {cartItems.length}</h1>
-                <h1>Total: {priceHandlers.totalPrice(cartItems)}$</h1>
+                <h3>Albums: {cartItems.length}</h3>
+                <h3>Total: {priceHandlers.totalPrice(cartItems)}$</h3>
             </div>
         </section>
         <Link to="/">Back</Link>

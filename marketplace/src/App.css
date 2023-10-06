@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-wrap: break-word;
 }
 
 :root {
@@ -82,7 +83,7 @@ ul {
   grid-template-rows: 3fr;
 }
 
-ul li {
+ul li.load__album {
   background-color: #3e3b3b72;
   border-radius: 2rem;
   padding: 5%;
