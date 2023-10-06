@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link, useOutletContext } from "react-router-dom";
 import { priceHandlers } from "../../utils/priceHandler";
 
@@ -16,7 +15,7 @@ export default function Cart() {
                     return <li key={key}>
                         <img src={item.image[3]['#text']} alt={item.name + "   cover"} />
                         <h3>{item.name}</h3>
-                        <p>{item.artist}</p>
+                        <p>{item.artist.name}</p>
                         <span className="price">
                             <p>Quantity: {item.quantity}</p>
                             <p>U${item.price * item.quantity}</p>

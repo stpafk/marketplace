@@ -48,9 +48,10 @@ export default function Search() {
                         <div className="album__info">
                             <h3>{album.name}</h3>
                             <p>{album.artist}</p>
-                            <p>{album.quantity}</p>
+                            <p>{priceHandlers.getPrice(album) * album.quantity}$</p>
                             <span className="price">
-                                <p>{priceHandlers.getPrice(album)}$</p>
+                                <label htmlFor="qtt">Quantity:</label>
+                                <input type="number" name="nmb" onChange={(e) => album.quantity = e.target.value} min={1} max={10} />
                                 <button onClick={() => cartAdd(album)}>Add to Cart</button>
                             </span>
                         </div>

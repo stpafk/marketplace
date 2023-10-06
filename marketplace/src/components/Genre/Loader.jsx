@@ -39,25 +39,19 @@ export default function Loader(props) {
             <ul className="load__genre">
                 {data.length === 0 ? <p>Album not found. </p> : 
                 data.map((album, index) => {
-
-                    let obj = {
-                        name: album.name,
-                        artist: album.artist.name,
-                        price: priceHandlers.getPrice(album),
-                        img: album.image[3]['#text'],
-                        quantity: 1,
-                    }
-
                     return <li key={index} className="load__album">
                         <img src={album.image[3]['#text']} alt={album.name + "cover"} />
                         <div className="album__info">
                             <h3>{album.name}</h3>
                             <p>{album.artist.name}</p>
+                            <p>{priceHandlers.getPrice(album) * album.quantity}$</p>
                             <span className="price">
-                                <p>{priceHandlers.getPrice(album)}$</p>
-                                <button onClick={() => cartAdd(obj)}>Add to Cart</button>
+                                <label htmlFor="qtt">Quantity:</label>
+                                <input type="number" name="nmb" onChange={(e) => album.quantity = e.target.value} min={1} max={10} />
+                                <button onClick={() => cartAdd(album)}>Add to Cart</button>
                             </span>
                         </div>
+                        {console.log(album)}
                     </li>
                 })}
             </ul>
