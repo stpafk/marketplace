@@ -6,7 +6,7 @@ import hand from '../../assets/hand.svg'
 export default function Header({cartItems}) {
 
     const [value, setValue] = useState("");
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     function handleSearch(event) {
         event.preventDefault();

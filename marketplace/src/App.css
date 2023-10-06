@@ -51,11 +51,12 @@ section.main {
 }
 
 .genre__search h1 {
-  text-shadow: 10px 10px 30px rgb(0, 0, 106);
+  text-shadow: 2px 0 10px rgb(0, 0, 106);
   margin-bottom: 10%;
 }
 
 .genre__search > a {
+  font-size: 22px;
   padding: 5%;
   color: white;
   text-shadow: 5px 5px 10px rgb(0, 0, 106);
@@ -67,6 +68,12 @@ section.main {
 
 .grid h1 {
   margin: 2% 0;
+}
+
+.grid a {
+  font-size: 22px;
+  margin-left: 2%;
+  color: rgb(2, 2, 116);
 }
 
 ul {
@@ -85,8 +92,8 @@ ul li {
 }
 
 .load__album img {
-  box-shadow: 5px 5px 20px rgb(2, 2, 116);
-  border: 2px solid rgb(0, 0, 106);
+  box-shadow: 1px 1px 10px rgb(2, 2, 116);
+  border: 1px solid rgb(0, 0, 106);
   border-radius: 1rem;
 }
 
@@ -97,4 +104,17 @@ ul li {
 
 .album__info > h3 {
     font-style: italic;
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 200px;
+  font-size: 32px;
+}
+
+.error a {
+  color: rgb(2, 2, 116)
 }

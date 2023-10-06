@@ -8,10 +8,10 @@ export default function Album() {
 
     return(
         <section className="grid">
-            <Link to="/">Back</Link>
             {
                 <Loader type={search.type} cartAdd={cartAdd}/>
             }
+            <Link to="/">Back</Link>
         </section>
     )
 

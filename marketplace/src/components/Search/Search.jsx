@@ -33,8 +33,8 @@ export default function Search() {
     const {data, error, loading, state } = Fetch();
     const [cartAdd, object] = useOutletContext();
 
-    if (state === null) return <><Header /><p className="search__error">Search for an album.</p></>
-    if (loading) return <p className="search__error">Loading</p>
+    if (state === null) return <><div className="error"><p className="search__error">Search for an album.</p></div></>
+    if (loading) return <div className="loading"></div>
     if (error) return <p className="search__error">Error</p>
 
     return (
