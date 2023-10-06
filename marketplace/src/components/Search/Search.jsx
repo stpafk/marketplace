@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation, useOutletContext } from "react-router-dom";
-import Header from "../header/Header";
 import cleanUpData from "../../utils/cleanUpData";
 import { priceHandlers } from "../../utils/priceHandler";
 
@@ -20,7 +19,7 @@ function Fetch() {
 
             return response.json();
         })
-        .then((meta) => setData(cleanUpData(meta.results.albummatches.album)))
+        .then((data) => setData(cleanUpData(data.results.albummatches.album)))
         .catch((error) => setError(error))
         .finally(() => setLoading(false))
     }, [state])
@@ -43,27 +42,16 @@ export default function Search() {
             <ul className="load__search">
                 { data.length === 0 ? <p>Album not found.</p>
                 :
-                data.map((album, index) => {
-
-                    let obj = {
-                        name: album.name,
-                        artist: album.artist,
-                        price: priceHandlers.getPrice(album),
-                        img: album.image[3]['#text'],
-                        quantity: 1,
-                    }
-                    
+                data.map((album, index) => {  
                     return <li key={index} className="load__album">
                         <img src={album.image[3]['#text']} alt={album.name + " cover"} />
                         <div className="album__info">
                             <h3>{album.name}</h3>
                             <p>{album.artist}</p>
+                            <p>{album.quantity}</p>
                             <span className="price">
                                 <p>{priceHandlers.getPrice(album)}$</p>
-                                <label htmlFor="quantity">Quantity</label>
-                                <input type="number" name="quantity" id="qtt"
-                                min={1} onChange={() => obj.quantity++} />
-                                <button onClick={() => cartAdd(obj)}>Add to Cart</button>
+                                <button onClick={() => cartAdd(album)}>Add to Cart</button>
                             </span>
                         </div>
                     </li>

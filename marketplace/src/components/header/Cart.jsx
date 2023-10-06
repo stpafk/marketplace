@@ -14,7 +14,7 @@ export default function Cart() {
             <ul className="cart__items">
             {cartItems.map((item, key) => {
                     return <li key={key}>
-                        <img src={item.img} alt={item.name + "   cover"} />
+                        <img src={item.image[3]['#text']} alt={item.name + "   cover"} />
                         <h3>{item.name}</h3>
                         <p>{item.artist}</p>
                         <span className="price">
