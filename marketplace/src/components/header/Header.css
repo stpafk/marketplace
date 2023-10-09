@@ -4,7 +4,7 @@
 .header {   
     position: relative;
     display: flex;
-    padding: 2% 5%;
+    padding: 2%;
 }
 
 .header > a > img {
@@ -152,4 +152,8 @@ a {
     font-size: 22px;
     margin-left: 5%;
     color: rgb(19, 3, 248);
+}
+
+.nothing {
+    margin-left: 5%;
 }

@@ -6,9 +6,10 @@ export default function Cart() {
 
     const [add, cartItems, deleteItem] = useOutletContext();
 
-    if (cartItems.length === 0) return <><p>Nothing yet.</p><Link to="/album/heavy">Start Buying.</Link></>
+    if (cartItems.length === 0) return <><p className="nothing">Nothing yet.</p><Link to="/album/heavy">Start Buying.</Link></>
 
     return (<>
+        {console.log(cartItems)}
         <section className="cart">
             <ul className="cart__items">
             {cartItems.map((item, key) => {
@@ -16,7 +17,7 @@ export default function Cart() {
                         <img src={item.image[1]['#text']} alt={item.name + "   cover"} />
                         <div className="wrapper">
                             <h3>{item.name}</h3>
-                            <h4>{item.artist.name}</h4>
+                            {item.artist.name ? <h4>{item.artist.name}</h4> : <h4>{item.artist}</h4>}
                         </div>
                         <span className="price__cart">
                             <p>Quantity: {item.quantity}</p>
