@@ -84,6 +84,7 @@ section.cart {
 }
 
 .cart__display {
+    width: 30%;
     max-height: 300px;
     margin: 5% auto;
     background: #3e3b3b72;
@@ -93,6 +94,17 @@ section.cart {
 
 .cart__display h1 {
     padding-bottom: 50%;
+}
+
+.cart__display .img {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.img i {
+    font-size: 40px;
+    padding: 2%;
 }
 
 .cart__items {
@@ -126,7 +138,7 @@ section.cart {
     margin-left: 20%;
 }
 
-.price__cart button {
+button {
     cursor: pointer;
     background-color: #0000;
     border: none;
@@ -138,6 +150,6 @@ section.cart {
 
 a {
     font-size: 22px;
-  margin-left: 2%;
-  color: rgb(19, 3, 248);
+    margin-left: 5%;
+    color: rgb(19, 3, 248);
 }

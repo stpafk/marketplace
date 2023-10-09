@@ -21,15 +21,19 @@ export default function Cart() {
                         <span className="price__cart">
                             <p>Quantity: {item.quantity}</p>
                             <p>U${item.price * item.quantity}</p>
-                            <button onClick={() => deleteItem(item.name)}>Remove Album</button>
+                            <button onClick={() => deleteItem(item.name)}>Remove</button>
                         </span>
                     </li>
                 })}
             </ul>
             <div className="cart__display">
-                <h1>Your Cart</h1>
+                <div className="img">
+                    <i className="bi bi-cart"></i>
+                    <h3>Your Cart</h3>
+                </div>
                 <h3>Albums: {cartItems.length}</h3>
                 <h3>Total: {priceHandlers.totalPrice(cartItems)}$</h3>
+                <button className="">Checkout Buy</button>
             </div>
         </section>
         <Link to="/">Back</Link>
