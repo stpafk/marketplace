@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom" 
-import './default.css'
 
 export default function Home() {
 

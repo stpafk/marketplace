@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
-.header {
+
+
+.header {   
     position: relative;
     display: flex;
     padding: 2% 5%;
@@ -130,5 +132,12 @@ section.cart {
     border: none;
     border-bottom: 2px solid white;
     color: white;
-    font-family: 'Metal Mania', sans-serif
+    font-family: 'Metal Mania', sans-serif;
+    font-size: 16px;
+}
+
+a {
+    font-size: 22px;
+  margin-left: 2%;
+  color: rgb(19, 3, 248);
 }
