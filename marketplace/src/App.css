@@ -192,7 +192,8 @@ button > i {
   }
 } 
 
-@media (max-width: 412px) {
+@media (max-width: 428px) {
+  
   section.main {
     flex-direction: column;
   }
@@ -213,6 +214,7 @@ button > i {
     font-size: 22px;
   } .genre__search > a {
     font-size: 18px;
+    padding: 2%;
   }
 
   ul {

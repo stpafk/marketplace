@@ -157,3 +157,46 @@ a {
 .nothing {
     margin-left: 5%;
 }
+
+@media (max-width: 428px) {
+    .header > a{
+        display: none;
+    } 
+    .header .header__left {
+        width: 200px;
+    } .header .header__left h1 {
+        font-size: 20px;
+    } .header .header__left p {
+        font-size: 12px;
+    }
+    form.header__search {
+        margin: 0 0;
+    } form.header__search label {
+        font-size: 18px;
+    }
+    form.header__search span input {
+        max-width: 50%;
+    } form.header__search span button {
+        left: 40%;
+    }
+    .header__shop {
+        margin: 0;
+    } .header__shop span a {
+        font-size: 38px;
+    } .cart__qtt {
+        font-size: 16px;
+        top: 23%;
+    }
+
+    section.cart {
+        flex-direction: column-reverse;
+    }
+    .cart__display {
+        width: 50%;
+        max-height: 300px;
+        padding: 2% 5%;
+    }
+    .cart__items {
+        margin: 2% 5%;
+    }
+}
