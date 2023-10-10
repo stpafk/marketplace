@@ -5,7 +5,6 @@ import Album from './components/Genre/Album';
 import Search from './components/Search/Search';
 import Cart from './components/header/Cart';
 import Home from './components/default/Home';
-import Contact from './components/outer/Contact';
 
 export default function Router() {
 
@@ -20,11 +19,7 @@ export default function Router() {
                 {path: "search", element: <Search />},
                 {path: "album/:type", element: <Album />},
             ]
-        },   
-        {
-            path: "/contact",
-            element: <Contact />
-        } 
+        }, 
     ])
 
     return <RouterProvider router={router} />

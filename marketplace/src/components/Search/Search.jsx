@@ -15,8 +15,7 @@ function Fetch() {
         .then((response) => {
             if (response.status >= 400) {
                 throw new Error("error");
-            };
-
+            }
             return response.json();
         })
         .then((data) => setData(cleanUpData(data.results.albummatches.album)))
@@ -55,7 +54,7 @@ export default function Search() {
                                 <label htmlFor="qtt">Quantity:</label>
                                 <input type="number" placeholder="1" name="nmb" onChange={(e) => album.quantity = e.target.value} min={1} max={10} />
                                 <button onClick={() => cartAdd(album)}>Add to Cart 
-                                <i class="bi bi-cart"></i></button>
+                                <i className="bi bi-cart"></i></button>
                             </div>
                             {console.log(album)}
                         </div>

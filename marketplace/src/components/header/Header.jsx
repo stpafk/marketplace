@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Link, useNavigate, useOutletContext } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import './Header.css'
 import hand from '../../assets/hand.svg'
+import PropTypes from 'prop-types'
 
 export default function Header({cartItems}) {
 
@@ -47,4 +48,9 @@ export default function Header({cartItems}) {
               </div>
           </section>
     );
-};
+}
+
+Header.propTypes = {
+    cartItems: PropTypes.object,
+    'cartItems.length': PropTypes.number,
+}
