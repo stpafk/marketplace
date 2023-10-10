@@ -32,12 +32,6 @@ export default function Header({cartItems}) {
                 </span>
               </form>
               <div className="header__shop">
-                {/*
-                <span className='add'>
-                    <Link to="">
-                        <i className="bi bi-plus-circle"></i>
-                    </Link>
-                </span>*/}
                 <span className='cart'>
                     <Link to="/cart">
                         {cartItems === undefined ? (<></>) :

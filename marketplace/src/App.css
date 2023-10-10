@@ -103,15 +103,20 @@ ul li.load__album {
   display: flex;
   flex-direction: row;
   padding: 4% 0;
+  margin: auto 0;
 }
 
 .info {
-  max-width: 250px;
+  max-width: 235px;
 }
 
-.album__info > .info h3 {
+.info h3 {
     font-size: 24px;
     font-style: italic;
+}
+
+.info > p:last-child {
+  font-size: 24px;
 }
 
 .price {
@@ -186,3 +191,41 @@ button > i {
     transform: rotate(360deg);
   }
 } 
+
+@media (max-width: 412px) {
+  section.main {
+    flex-direction: column;
+  }
+  .main__info {
+    margin: 0 auto;
+    max-height: 500px;
+    max-width: 90%;
+    padding: 5%;
+  } .main__info > h1 {
+    font-size: 22px;
+  } .main__info > p {
+    font-size: 14px;
+  }
+  .genre__search {
+    margin: 10% auto;
+    width: 60%;
+  } .genre__search > h1 {
+    font-size: 22px;
+  } .genre__search > a {
+    font-size: 18px;
+  }
+
+  ul {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto, 1fr);
+  } li img {
+    height: 80%;
+  }
+  .info {
+    max-width: 200px;
+  }
+  .info > h3 {
+    font-size: 18px;
+    ;
+  }
+}
