@@ -56,7 +56,6 @@ export default function Search() {
                                 <button onClick={() => cartAdd(album)}>Add to Cart 
                                 <i className="bi bi-cart"></i></button>
                             </div>
-                            {console.log(album)}
                         </div>
                     </li>
                 })}
